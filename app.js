@@ -15,12 +15,14 @@ const reviewsPath = require('./src/routes/reviews')
 const restaurantsPath = require('./src/routes/restaurants')
 const signupPath = require('./src/routes/signup')
 const loginPath = require('./src/routes/login')
+const favoritePath = require('./src/routes/favorite')
 
 app.use('/users', usersPath)
 app.use('/restaurants', restaurantsPath )
 app.use('/reviews', reviewsPath)
 app.use('/signup', signupPath)
 app.use('/login', loginPath)
+app.use('/favorite', favoritePath)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500

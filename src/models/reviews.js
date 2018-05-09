@@ -20,6 +20,24 @@ const getCurrentReview = review_id => {
     })
 }
 
+const addReview = (body) => {
+  const newReview = reviews.addReview(body)
+  return newReview
+    .then(result => {
+      console.log('result in addReview model', result)
+      return result 
+    })
+}
+
+const updateReviewVotes = (votes, review_id) => {
+  const updatedReview = reviews.updateReviewVotes(votes, review_id)
+  return updatedReview
+    .then(result => {
+      console.log('result in updatedReviewVotes model', result)
+      return result
+    })
+}
+
 const updateReview = (body, review_id) => {
   const reviewUpdated = reviews.updateReview(body, Number(review_id))
     return reviewUpdated
@@ -32,5 +50,7 @@ const updateReview = (body, review_id) => {
 module.exports ={
   getAllReviews,
   getCurrentReview,
+  addReview,
+  updateReviewVotes,
   updateReview
 }

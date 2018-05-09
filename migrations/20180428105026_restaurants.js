@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
     table.string('yelp_id').notNullable().defaultsTo('')
     table.string('address').notNullable().defaultsTo('')
     table.string('phone').notNullable().defaultsTo('')
+    table.decimal('lat').notNullable().defaultsTo(0)
+    table.decimal('lng').notNullable().defaultsTo(0)
     table.string('pic').notNullable().defaultsTo('')
     table.timestamps(true, true)
   })
