@@ -10,6 +10,16 @@ const getUserInfo = (username) => {
     })
 }
 
+const updateUserInfo = (info, username) => {
+  const updatedInfo = users.updateUserInfo(info, username)
+  return updatedInfo
+    .then(result => {
+      console.log('result in updateUserInfo in model', result )
+      return result
+    })
+}
+
 module.exports = {
-  getUserInfo
+  getUserInfo,
+  updateUserInfo
 }

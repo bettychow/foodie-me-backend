@@ -36,8 +36,6 @@ const updateReview = (body, review_id) => {
   return knex('reviews')
     .where('reviews.id', review_id)
     .update(body)
-    
-
 }
 
 module.exports = {

@@ -8,7 +8,6 @@ const getUserFavorite = (user_id) => {
 
   return userRestaurants
     .then(result => {
-      console.log('result in getUserRestaurants in model', result)
       return result
     })
 

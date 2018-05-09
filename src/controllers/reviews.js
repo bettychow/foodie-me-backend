@@ -30,7 +30,6 @@ const addReview = (req, res) => {
 }
 
 const updateReviewVotes = (req, res) => {
-  console.log('ggggggg', req.body, req.params.id)
   const data = model.updateReviewVotes(req.body.updatedVotes, req.params.id)
   data
     .then(result => {
@@ -41,6 +40,10 @@ const updateReviewVotes = (req, res) => {
 
 const updateReview = (req, res) => {
   const data = model.updateReview(req.body, req.params.id)
+  data
+    .then(result => {
+      res.status(200).json(result)
+    })
 }
 
 
