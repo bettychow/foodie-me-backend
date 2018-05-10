@@ -39,8 +39,9 @@ const updateReview = (body, review_id) => {
 }
 
 const deleteReview = (review_id) => {
+  console.log('???????////// in queries', review_id )
   return knex('reviews')
-    .where('id', review_id)
+    .where({id: review_id})
     .del()
 }
 
