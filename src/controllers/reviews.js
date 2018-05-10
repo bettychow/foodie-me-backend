@@ -46,11 +46,20 @@ const updateReview = (req, res) => {
     })
 }
 
+const deleteReview = (req, res) => {
+  const data = model.deleteReview(req.params.id)
+  data
+    then(result => {
+      res.status(200).json(result)
+    })
+}
+
 
 module.exports = {
   getAllReviews,
   getCurrentReview,
   addReview,
   updateReviewVotes,
-  updateReview
+  updateReview,
+  deleteReview
 }

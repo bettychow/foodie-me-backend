@@ -38,10 +38,17 @@ const updateReview = (body, review_id) => {
     .update(body)
 }
 
+const deleteReview = (review_id) => {
+  return knex('reviews')
+    .where('id', review_id)
+    .del()
+}
+
 module.exports = {
   getAllReviews,
   getCurrentReview,
   addReview,
   updateReviewVotes,
-  updateReview
+  updateReview,
+  deleteReview
 }

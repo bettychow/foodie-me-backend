@@ -44,7 +44,15 @@ const updateReview = (body, review_id) => {
       .then(result => {
         return result
       })
+}
 
+const deleteReview = (review_id) => {
+  const reviewDeleted = reviews.deleteReview(Number(review_id))
+    return reviewDeleted
+      then(result => {
+        console.log('result in deleteReview in model', result)
+        return result
+      })
 }
 
 module.exports ={
@@ -52,5 +60,6 @@ module.exports ={
   getCurrentReview,
   addReview,
   updateReviewVotes,
-  updateReview
+  updateReview,
+  deleteReview
 }
