@@ -1,5 +1,10 @@
 const knex = require('./db')
 
+const getAllRestaurants = () => {
+  return knex('restaurants')
+    .select('*')
+}
+
 const getUserRestaurants = (user_id) => {
 
   return knex('restaurants')
@@ -32,6 +37,7 @@ const updateUserFavorites = (user_id, restaurant_id) => {
 }
 
 module.exports = {
+  getAllRestaurants,
   getRestaurant,
   getUserRestaurants,
   addRestaurant,

@@ -51,7 +51,7 @@ const deleteReview = (review_id) => {
   console.log('??????????? in model', review_id)
   const reviewDeleted = reviews.deleteReview(Number(review_id))
     return reviewDeleted
-      then(result => {
+      .then(result => {
         console.log('result in deleteReview in model', result)
         return result
       })
