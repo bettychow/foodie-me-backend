@@ -10,10 +10,8 @@ const signupRes = signup.createAcct(name, username, email, password)
 
 return signupRes
   .then(result => {
-    
-    console.log(result)
+    return result
   })
-
 }
 
 

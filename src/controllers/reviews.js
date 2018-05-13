@@ -29,15 +29,6 @@ const addReview = (req, res) => {
     })
 }
 
-const updateReviewVotes = (req, res) => {
-  const data = model.updateReviewVotes(req.body.updatedVotes, req.params.id)
-  data
-    .then(result => {
-      console.log('result in updateReveiwVotes ctrl', result)
-      res.status(200).json(result)
-    })
-}
-
 const updateReview = (req, res) => {
   const data = model.updateReview(req.body, req.params.id)
   data
@@ -52,7 +43,7 @@ const deleteReview = (req, res) => {
   const data = model.deleteReview(req.params.id)
   data
     then(result => {
-      res.status(200).json(result)
+      res.status(204).json(result)
     })
 }
 
@@ -61,7 +52,6 @@ module.exports = {
   getAllReviews,
   getCurrentReview,
   addReview,
-  updateReviewVotes,
   updateReview,
   deleteReview
 }

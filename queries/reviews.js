@@ -22,15 +22,6 @@ const addReview = (body) => {
     
 }
 
-const updateReviewVotes = (votes, review_id) => {
-  return knex('reviews')
-    .select('*')
-    .join('restaurants','restaurants.id', '=', 'restaurant_id')
-    .where('reviews.id', review_id)
-    .update({ votes: Number(votes) })
-    .returning('*')
-}
-
 const updateReview = (body, review_id) => {
   return knex('reviews')
     .where('reviews.id', review_id)
@@ -48,7 +39,6 @@ module.exports = {
   getAllReviews,
   getCurrentReview,
   addReview,
-  updateReviewVotes,
   updateReview,
   deleteReview
 }
