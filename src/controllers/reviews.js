@@ -39,7 +39,7 @@ const deleteReview = (req, res) => {
   console.log('req.params in deleteReview ctrl', req.params )
   const data = model.deleteReview(req.params.id)
   data
-    then(result => {
+    .then(result => {
       res.status(204).json(result)
     })
 }
