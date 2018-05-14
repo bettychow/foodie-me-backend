@@ -8,5 +8,4 @@ router.post('/', ctrl.addReview)
 router.patch('/:id', ctrl.updateReview)
 router.delete('/:id', ctrl.deleteReview)
 
-
 module.exports = router

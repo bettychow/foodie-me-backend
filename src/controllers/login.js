@@ -9,14 +9,7 @@ const login = (req, res) => {
        if(result.error) {
          res.status(403).json({error: {message: 'Could not login', errors: result.error}})
        } else {
-        console.log('result in login ctrl', result)
-        //  res.set({
-        //    'Access-Control-Expose-Headers': 'Authorization',
-        //    'Authorization': `${result}`
-        //  })
-        //  .send('passwords match, token in Authorization header')
-
-        res.status(200).json(result)
+           res.status(200).json(result)
         }
       })
 }

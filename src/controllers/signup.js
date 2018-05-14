@@ -1,10 +1,7 @@
 const model = require('../models/signup')
 
-
-
 const signup = (req, res) => {
 
-  console.log('req.body in ctrl', req.body)
   const data = model.createAcct(req.body)
 
   data

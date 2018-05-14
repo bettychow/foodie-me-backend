@@ -28,18 +28,9 @@ const addRestaurant = body => {
     .returning('*')
 }
 
-const updateUserFavorites = (user_id, restaurant_id) => {
-  return knex
-    .insert({user_id, restaurant_id})
-    .into('users_restaurants')
-    .returning('*')
-
-}
-
 module.exports = {
   getAllRestaurants,
   getRestaurant,
   getUserRestaurants,
-  addRestaurant,
-  updateUserFavorites
+  addRestaurant
 }

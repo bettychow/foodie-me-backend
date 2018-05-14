@@ -8,7 +8,6 @@ const getAllRestaurants = (req, res) => {
     })
 }
 
-
 const getRestaurant = (req, res) => {
   const data = model.getRestaurant(req.params.id)
 
@@ -16,8 +15,8 @@ const getRestaurant = (req, res) => {
     .then(result => {
       res.status(200).json(result)
     })
-
 }
+
 const addRestaurant = (req, res) => {
   const data = model.addRestaurant(req.body)
   data

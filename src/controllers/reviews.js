@@ -1,14 +1,12 @@
 const model = require('../models/reviews')
 
 const getAllReviews = (req, res) => {
-  console.log(' in getAllReviews')
   const data = model.getAllReviews()
 
   data
     .then(result => {
       res.status(200).json( result )
     })
-
 }
 
 const getCurrentReview = (req, res) => {
@@ -38,7 +36,6 @@ const updateReview = (req, res) => {
 }
 
 const deleteReview = (req, res) => {
-
   console.log('req.params in deleteReview ctrl', req.params )
   const data = model.deleteReview(req.params.id)
   data
@@ -46,7 +43,6 @@ const deleteReview = (req, res) => {
       res.status(204).json(result)
     })
 }
-
 
 module.exports = {
   getAllReviews,

@@ -7,7 +7,6 @@ const getUserFavorites = (user_id) => {
     .join('users_restaurants', 'restaurant_id', '=', 'restaurants.id' )
     .join('users', 'users.id', '=', 'users_restaurants.user_id')
     .where('users_restaurants.user_id', Number(user_id))
-    
 }
 
 const updateUserFavorites = (user_id, restaurant_id) => {
@@ -15,7 +14,6 @@ const updateUserFavorites = (user_id, restaurant_id) => {
     .insert({user_id, restaurant_id})
     .into('users_restaurants')
     .returning('*')
-
 }
 
 const deleteUserFavorite = (user_id, restaurant_id) => {
@@ -24,8 +22,6 @@ const deleteUserFavorite = (user_id, restaurant_id) => {
       .andWhere('restaurant_id', restaurant_id)
       .del()
 }
-
-
 
 module.exports = {
   getUserFavorites,
