@@ -7,4 +7,11 @@ const getUsersFollowed = (follower_id) => {
     .where('follower_id', follower_id)
 }
 
-module.exports = { getUsersFollowed }
+const updateUserFollowed = (followed_id, follower_id) => {
+  return knex
+    .insert({followed_id, follower_id})
+    .into('follow')
+    .returning('*')
+}
+
+module.exports = { getUsersFollowed, updateUserFollowed }
