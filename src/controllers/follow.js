@@ -18,4 +18,12 @@ const updateUserFollowed = (req, res) => {
     })
 }
 
-module.exports = { getUsersFollowed, updateUserFollowed }
+const deleteUserFollowed = (req, res) => {
+  const data =  model.deleteUserFollowed(req.body)
+  data
+    .then(result => {
+      res.status(204).json(result)
+    })
+}
+
+module.exports = { getUsersFollowed, updateUserFollowed, deleteUserFollowed }

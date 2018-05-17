@@ -14,4 +14,11 @@ const updateUserFollowed = (followed_id, follower_id) => {
     .returning('*')
 }
 
-module.exports = { getUsersFollowed, updateUserFollowed }
+const deleteUserFollowed = (followed_id, follower_id) => {
+  return knex('follow')
+    .where('followed_id', followed_id)
+    .andWhere('follower_id', follower_id)
+    .del()
+}
+
+module.exports = { getUsersFollowed, updateUserFollowed, deleteUserFollowed }

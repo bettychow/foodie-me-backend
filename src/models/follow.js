@@ -11,7 +11,7 @@ const getUsersFollowed = (follower_id) => {
     })
 }
 
-const updateUserFollowed = (body) => {
+const updateUserFollowed = body => {
   const followed_id = Number(body.followed_id)
   const follower_id = Number(body.follower_id)
 
@@ -25,8 +25,21 @@ const updateUserFollowed = (body) => {
 
 }
 
+const deleteUserFollowed = body => {
+  const followed_id = Number(body.followed_id)
+  const follower_id = Number(body.follower_id)
+
+  const deletedPair = follow.deleteUserFollowed(followed_id, follower_id)
+
+  return deletedPair
+    .then(result => {
+      console.log('result in deletedUserFollowed in model', result)
+      return result
+    })
+}
+
 module.exports = {
   getUsersFollowed,
-  updateUserFollowed
-
+  updateUserFollowed,
+  deleteUserFollowed
 }
