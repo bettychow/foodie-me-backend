@@ -22,7 +22,6 @@ const checkLogin = ({email, password}) => {
         const token = jwt.sign(jwtPayload, 'process.env.SECRET')
         const decode = jwt.verify(token, 'process.env.SECRET')
 
-        console.log('tttttttt', token)
         return token
       }
     })

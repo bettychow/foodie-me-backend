@@ -5,7 +5,6 @@ const getAllReviews = () => {
   const userReviews = reviews.getAllReviews()
   return userReviews
     .then(result => {
-      console.log('result in getUserReviews model', result)
       return result
     })
 }
@@ -14,7 +13,6 @@ const getCurrentReview = review_id => {
   const currentReview = reviews.getCurrentReview(Number(review_id))
   return currentReview
     .then(result => {
-      console.log('result in getCurrentReview model', result)
       return result
     })
 }
@@ -37,11 +35,9 @@ const updateReview = (body, review_id) => {
 
 const deleteReview = (review_id) => {
 
-  console.log('??????????? in model', review_id)
   const reviewDeleted = reviews.deleteReview(Number(review_id))
     return reviewDeleted
       .then(result => {
-        console.log('result in deleteReview in model', result)
         return result
       })
 }

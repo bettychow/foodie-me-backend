@@ -17,6 +17,7 @@ const signupPath = require('./src/routes/signup')
 const loginPath = require('./src/routes/login')
 const favoritePath = require('./src/routes/favorite')
 const votesPath = require('./src/routes/votes')
+const followPath = require('./src/routes/follow')
 
 app.use('/users', usersPath)
 app.use('/restaurants', restaurantsPath )
@@ -25,6 +26,7 @@ app.use('/signup', signupPath)
 app.use('/login', loginPath)
 app.use('/favorite', favoritePath)
 app.use('/votes', votesPath)
+app.use('/follow', followPath)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
