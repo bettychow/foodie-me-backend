@@ -8,7 +8,9 @@ const createAcct = ( name, username, email, password ) => {
     .first()
     .then(found => {
       if(found) {
-        if(found.username === username) {
+        if(found.username === username && found.email === email ) {
+          return 'Both username and email already exist'
+        } else if(found.username === username) {
           return 'Username already exists'
         } else if (found.email === email) {
           return 'Email already exists'
