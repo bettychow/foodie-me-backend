@@ -4,10 +4,15 @@ const bcrypt = require('bcryptjs')
 const createAcct = ( name, username, email, password ) => {
   return knex('users')
     .where('email', email)
+    .orWhere('username', username)
     .first()
     .then(found => {
       if(found) {
-        return 'User already exists'
+        if(found.username === username) {
+          return 'Username already exists'
+        } else if (found.email === email) {
+          return 'Email already exists'
+        }
       } else {
         const hashedPassword = hash(password, 10)
 
